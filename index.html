@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniapp de Telegram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sección 1: Juego -->
+        <div class="section" id="juego">
+            <div class="balance">Balance: <span id="balance">0</span></div>
+            <div class="user">User ID: <span id="userId"></span></div>
+            <img src="character.png" alt="Personaje" class="character-image"> <!-- Imagen del personaje -->
+            <button id="btnFarmeo" onclick="iniciarFarmeo()">Iniciar Farmeo</button>
+            <div class="progress-bar" id="progressBar"></div>
+            <button id="claimFarm" onclick="reclamarFarmeo()" disabled>Reclamar Farmeo</button>
+        </div>
+
+        <!-- Sección 2: Invita -->
+        <div class="section" id="invita">
+            <h2>Invita</h2>
+            <div>
+                Link referencial: <input type="text" value="https://tuapp.com/refer" id="referLink" readonly>
+                <button onclick="copiarLink()">Copy Link</button>
+            </div>
+            <button onclick="compartirEnTelegram()">Compartir en Telegram</button>
+            <h3>Lista de beneficios:</h3>
+            <ul id="amigosList">
+                <!-- Aquí se agregarán los amigos referidos dinámicamente -->
+            </ul>
+            <button onclick="reclamarReferidos()">Reclamar 10% de referidos</button>
+        </div>
+
+        <!-- Sección 3: Tareas -->
+        <div class="section" id="tareas">
+            <h2>Tareas</h2>
+            <h3>Recompensa diaria:</h3>
+            <div id="listaTareas">
+                <!-- Aquí se agregarán las tareas dinámicamente -->
+            </div>
+            <h3>Tareas Realizadas:</h3>
+            <ul id="tareasRealizadas">
+                <!-- Aquí se mostrarán las tareas completadas -->
+            </ul>
+        </div>
+    </div>
+    <div class="navbar">
+        <button onclick="showSection('juego')">🎮</button>
+        <button onclick="showSection('invita')">👥</button>
+        <button onclick="showSection('tareas')">📋</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
